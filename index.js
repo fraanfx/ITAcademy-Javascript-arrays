@@ -105,7 +105,12 @@ let emailRegex = /([a-zA-Z0-9_\.\-])+\@([a-zA-Z0-9\-\ñ])+\.+es/gi;
  const catchedEmails = [] 
   result.map(emailCatched => catchedEmails.push(emailCatched)
   );
-  catchedEmails.forEach(element => {
+
+  const uniqueSet = new Set(catchedEmails);
+  const uniqueCatchedEmails = [...uniqueSet]
+
+
+  uniqueCatchedEmails.forEach(element => {
     console.log(element)
     
   });
@@ -113,7 +118,7 @@ let emailRegex = /([a-zA-Z0-9_\.\-])+\@([a-zA-Z0-9\-\ñ])+\.+es/gi;
     
   
 
- alert(catchedEmails)
+ alert(uniqueCatchedEmails)
 }
 
 //imprimir(name);
